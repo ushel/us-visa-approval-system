@@ -41,3 +41,5 @@ class MongoDBClient:
 # DB_name = "US_VISA"
 # COLLECTION_NAME = "visa_data"
 # CONNECTION_URL = "mongodb+srv://utkarsh:utkarsh@cluster0.wtdbx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+# set environment variable
+# export (name mentioned in constant for url)MONGODB_URL="mongodb+srv://utkarsh:utkarsh@cluster0.wtdbx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0" no spaces  

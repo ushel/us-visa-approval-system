@@ -14,8 +14,13 @@
 # from us_visa.constants import DATABASE_NAME
 # print(DATABASE_NAME, "Welcome")
 
-from us_visa.constants import *   #To import all the constants from the file...
+# from us_visa.constants import *   #To import all the constants from the file...
 
-print(DATABASE_NAME, "Welcome")
+# print(DATABASE_NAME, "Welcome")
 
-print(COLLECTION_NAME, "Welcome")
+# print(COLLECTION_NAME, "Welcome")
+
+from us_visa.pipeline.training_pipeline import TrainPipeline
+
+pipeline = TrainPipeline()
+pipeline.run_pipeline()

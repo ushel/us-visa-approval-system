@@ -5,8 +5,8 @@ from pandas import DataFrame
 from sklearn.model_selection import train_test_split
 
 from us_visa.entity.config_entity import DataIngestionConfig
-from us_visa.entity.artifact_entity import DataInjectionArtifact, DataInjectionArtifactEntityFactory
-from us_visa.exception import USvisaException
+from us_visa.entity.artifact_entity import DataInjectionArtifact
+from us_visa.exception import USVisaException
 from us_visa.logger import logging
 from us_visa.data_access.usvisa_data import USVisaData
 
@@ -19,7 +19,7 @@ class DataIngestion:
         try:
             self.data_ingestion_config = data_ingestion_config
         except Exception as e:
-            raise USvisaException(e, sys)
+            raise USVisaException(e, sys)
         
     def export_data_into_feature_store(self) -> DataFrame:
         """
@@ -43,7 +43,7 @@ class DataIngestion:
             dataframe.to_csv(feature_store_file_path,index=False,header=True)
             return dataframe
         except Exception as e:
-            raise USvisaException(e, sys)
+            raise USVisaException(e, sys)
     
     def split_data_as_train_test(self, dataframe:DataFrame) -> None:
         """
@@ -70,7 +70,7 @@ class DataIngestion:
             
             logging.info(f"Exported train and test path.")
         except Exception as e:
-            raise USvisaException(e, sys) from e
+            raise USVisaException(e, sys) from e
         
     def initiate_data_ingestion(self)->DataInjectionArtifact:
         """
@@ -98,7 +98,7 @@ class DataIngestion:
             logging.info(f"Data ingestion artifact: {data_ingestion_artifact}")
             return data_ingestion_artifact
         except Exception as e:
-            raise USvisaException(e, sys) from e
+            raise USVisaException(e, sys) from e
             
             
                     
