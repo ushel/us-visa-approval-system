@@ -21,3 +21,11 @@ conda activate visa
 
 pip install -r requirements.txt
 '''
+
+#Workflow
+1. Constant
+2. Config -> entity
+3. Artifact -> entity
+4. Component
+5. Pipeline
+6. app.py ->Endpoint
