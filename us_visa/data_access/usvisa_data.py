@@ -35,6 +35,8 @@ class USVisaData:
             df = pd.DataFrame(list(collection.find()))
             if "id" in df.columns.to_list():
                 df = df.drop(columns=["id"],axis=1)
+            elif "_id" in df.columns.to_list():
+                df = df.drop(columns=["_id"],axis=1)
             df.replace({"na":np.nan},inplace = True)
             return df
         except Exception as e:
