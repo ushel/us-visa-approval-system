@@ -7,7 +7,7 @@ grid_search:
     verbose: 3
 
 model_selection:
-  module_0:
+  module_0: 
     class: KNeighborsClassifer
     module: sklearn.neighbors
     params:
@@ -27,7 +27,8 @@ model_selection:
         - 3
         - 5
         - 9
-  model_1:
+
+  module_1:
     class: RandomForestClassifier
     module: sklearn.ensemble
     params:
