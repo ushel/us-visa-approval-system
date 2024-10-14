@@ -37,6 +37,7 @@ class DataTransformationConfig:
     transformed_test_file_path: str = os.path.join(data_transformation_dir,DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
                                                    TEST_FILE_NAME.replace("csv","npy"))
     transformed_object_file_path: str = os.path.join(data_transformation_dir,
-                                                     DATA_TRANSFORMATION_TRANSFORMED_DATA_DIR,
+                                                     DATA_TRANSFORMATION_TRANSFORMED_OBJECT_DIR,
                                                      PREPROCESSING_OBJECT_FILE_NAME)
+    
     

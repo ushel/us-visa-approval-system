@@ -123,7 +123,7 @@ class DataTransformation:
                     TargetValueMapping()._asdict()
                 )
                 
-                logging.info(f"Got input dataset features.[{target_feature_train_df}]")
+                # logging.info(f"Got input dataset features.[{target_feature_train_df}]")
                 
                 input_feature_test_df = test_df.drop(columns=[TARGET_COLUMN], axis=1)
                 
