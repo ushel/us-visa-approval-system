@@ -95,7 +95,7 @@ class DataValidation:
     def read_data(file_path) -> DataFrame:
         try:
             return pd.read_csv(file_path)
-        except Exception as e:
+        except Exception as e:        
             raise USVisaException(e,sys)
         
     
@@ -127,7 +127,7 @@ class DataValidation:
             drift_status = json_report["data_drift"]["data"]["metrics"]["dataset_drift"]
             return drift_status
         except Exception as e:
-            raise USVisaException(e,sys) from e\
+            raise USVisaException(e,sys) from e
                 
     def initiate_data_validation(self) -> DataValidationArtifact:
         """
