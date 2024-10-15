@@ -8,7 +8,7 @@ grid_search:
 
 model_selection:
   module_0: 
-    class: KNeighborsClassifer
+    class: KNeighborsClassifier
     module: sklearn.neighbors
     params:
       algorithm: kd_tree
@@ -37,11 +37,10 @@ model_selection:
       n_estimators: 3
     search_param_grid:
       max_depth:
-      -10
-      -15
-      -20
+      - 10
+      - 15
+      - 20
       max_features:
-      - auto
       - sqrt
       - log2
       n_estimators:
