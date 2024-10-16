@@ -29,3 +29,10 @@ pip install -r requirements.txt
 4. Component
 5. Pipeline
 6. app.py ->Endpoint
+
+
+git bash... to set env variables
+
+export MONGODB_URL = ""
+export AWS_ACCESS_KEY_ID ="AWS_ACCESS_KEY_ID"
+export AWS_SECRET_ACCESS_KEY ="AWS_SECRET_ACCESS_KEY"
