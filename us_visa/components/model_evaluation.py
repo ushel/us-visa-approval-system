@@ -109,9 +109,7 @@ class ModelEvaluation:
             return model_evaluation_artifact
         except Exception as e:
             raise USVisaException(e, sys) from e
-        
-            
-        
+                 
     
 
             
