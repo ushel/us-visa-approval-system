@@ -3,7 +3,7 @@ import sys
 
 import numpy as np 
 import pandas as pd 
-from us_visa.entity.config_entity import USVisaPredictionConfig, USVisaPredictionConfiguration
+from us_visa.entity.config_entity import USVisaPredictionConfig
 from us_visa.entity.s3_estimator import USVisaEstimator
 from us_visa.exception import USVisaException
 from us_visa.logger import logging
@@ -13,7 +13,7 @@ from pandas import DataFrame
 class USVisaData:
     def __init__(self,
                  continent,
-                 education_of_employees,
+                 education_of_employee,
                  has_job_experience,
                  requires_job_training,
                  no_of_employees,
@@ -31,7 +31,7 @@ class USVisaData:
         """
         try:
             self.continent = continent
-            self.education_of_employees = education_of_employees
+            self.education_of_employee = education_of_employee
             self.has_job_experience = has_job_experience
             self.requires_job_training = requires_job_training
             self.no_of_employees = no_of_employees
@@ -62,7 +62,7 @@ class USVisaData:
         try:
             input_data = {
                 "continent": [self.continent],
-                "education_of_employees": [self.education_of_employees],
+                "education_of_employee": [self.education_of_employee],
                 "has_job_experience": [self.has_job_experience],
                 "requires_job_training": [self.requires_job_training],
                 "no_of_employees": [self.no_of_employees],

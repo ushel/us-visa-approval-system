@@ -7,14 +7,16 @@ from starlette.responses import HTMLResponse, RedirectResponse
 from uvicorn import run as app_run
 
 from typing import Optional
+from pathlib import Path
 
 from us_visa.constants import APP_HOST, APP_PORT
-from us_visa.pipeline.prediction_pipeline import USvisaData, USvisaClassifier
+from us_visa.pipeline.prediction_pipeline import USVisaData, USVisaClassifier
 from us_visa.pipeline.training_pipeline import TrainPipeline
 
 app = FastAPI()
-
+# BASE_DIR = Path("us_visa").resolve().parent
 app.mount("/static", StaticFiles(directory="static"), name="static")
+# app.mount("/static", StaticFiles(directory=Path(BASE_DIR, '/static')), name="static")
 
 templates = Jinja2Templates(directory='templates')
 
@@ -82,7 +84,7 @@ async def predictRouteClient(request: Request):
         form = DataForm(request)
         await form.get_usvisa_data()
         
-        usvisa_data = USvisaData(
+        usvisa_data = USVisaData(
                                 continent= form.continent,
                                 education_of_employee = form.education_of_employee,
                                 has_job_experience = form.has_job_experience,
@@ -97,7 +99,7 @@ async def predictRouteClient(request: Request):
         
         usvisa_df = usvisa_data.get_usvisa_input_data_frame()
 
-        model_predictor = USvisaClassifier()
+        model_predictor = USVisaClassifier()
 
         value = model_predictor.predict(dataframe=usvisa_df)[0]
 
