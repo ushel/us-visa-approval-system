@@ -9,8 +9,8 @@ from uvicorn import run as app_run
 from typing import Optional
 
 from us_visa.constants import APP_HOST, APP_PORT
-from us_visa.pipline.prediction_pipeline import USvisaData, USvisaClassifier
-from us_visa.pipline.training_pipeline import TrainPipeline
+from us_visa.pipeline.prediction_pipeline import USvisaData, USvisaClassifier
+from us_visa.pipeline.training_pipeline import TrainPipeline
 
 app = FastAPI()
 
