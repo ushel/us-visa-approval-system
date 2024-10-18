@@ -36,3 +36,5 @@ git bash... to set env variables
 export MONGODB_URL = ""
 export AWS_ACCESS_KEY_ID ="AWS_ACCESS_KEY_ID"
 export AWS_SECRET_ACCESS_KEY ="AWS_SECRET_ACCESS_KEY"
+
+instead of demo.py have to run app.py to predict.
