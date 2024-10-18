@@ -28,7 +28,7 @@ class SimpleStorageService:
             raise USVisaException(e, sys) from e
     
     @staticmethod
-    def read_object(object_name: str, decode: bool = True, make_readable: bool = False) -> Union[StringIO,]:
+    def read_object(object_name: str, decode: bool = True, make_readable: bool = False) -> Union[StringIO, str]:
         """
         Method Name: read_object
         Description: This method reads an object_name object with kwargs
@@ -88,7 +88,7 @@ class SimpleStorageService:
         
         try:
             bucket = self.get_bucket(bucket_name)
-            file_objects = [file_object for file_object in bucket.objects.filter(Perfix = filename)]
+            file_objects = [file_object for file_object in bucket.objects.filter(Prefix=filename)]
             func = lambda x: x[0] if len(x) == 1 else x
             
             file_objs = func(file_objects)
@@ -178,7 +178,7 @@ class SimpleStorageService:
         except Exception as e:
             raise USVisaException(e, sys) from e
         
-    def upload_df_as_csv(self, data_frame: Dataframe, local_filename: str, bucket_filename: str, bucket_name: str):
+    def upload_df_as_csv(self, data_frame: DataFrame, local_filename: str, bucket_filename: str, bucket_name: str):
         """
         Method Name: upload_df_as_csv
         Description: This methods uploads the dataframe to bucket_filename csv file in bucket_name bucket.
